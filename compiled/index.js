@@ -44,3 +44,26 @@ let person = {
 person.name = 'Cardo';
 person.score = 60;
 const score = person.score;
+// functions
+function addTwoNumbers(a, b) {
+    return a + b;
+}
+;
+console.log(addTwoNumbers(1, 2));
+const subtractTwoNumbers = (a, b) => {
+    return a - b;
+};
+console.log(subtractTwoNumbers(10, 6));
+function addAllNumbers(items) {
+    const total = items.reduce((a, b) => a + b, 0);
+    console.log(total);
+}
+;
+addAllNumbers([1, 2, 3, 4, 5, 6]);
+// return type inference
+function formatGreeting(name, greeting) {
+    return `${greeting} ${name}`;
+}
+;
+const result = formatGreeting('Edmar', 'Hello');
+console.log(result);

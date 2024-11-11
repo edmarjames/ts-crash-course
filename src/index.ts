@@ -53,9 +53,34 @@ user.age = 24;
 let person = {
     name: 'Tanggol',
     score: 100
-}
+};
 
-person.name = 'Cardo'
-person.score = 60
+person.name = 'Cardo';
+person.score = 60;
 
 const score = person.score;
+
+// functions
+function addTwoNumbers(a: number, b: number): number {
+    return a + b;
+};
+console.log(addTwoNumbers(1, 2));
+
+const subtractTwoNumbers = (a: number, b: number): number => {
+    return a - b;
+};
+console.log(subtractTwoNumbers(10, 6));
+
+function addAllNumbers(items: number[]): void {
+    const total = items.reduce((a, b) => a + b, 0);
+    console.log(total);
+};
+addAllNumbers([1, 2, 3, 4, 5, 6]);
+
+// return type inference
+function formatGreeting(name: string, greeting: string) {
+    return `${greeting} ${name}`;
+};
+
+const result = formatGreeting('Edmar', 'Hello');
+console.log(result);
