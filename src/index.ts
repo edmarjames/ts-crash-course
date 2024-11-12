@@ -131,3 +131,38 @@ const [lat, long] = useCoords();
 let tupleUser: [name: string, age: number];
 tupleUser = ['gem', 90];
 console.log(tupleUser[0]);
+
+// interfaces
+interface Author {
+    name: string,
+    avatar: string
+};
+
+const authorOne: Author = {name: 'maria', avatar: '/img/maria.png'};
+
+interface Post {
+    title: string,
+    body: string,
+    tags: string[],
+    createdAt: Date,
+    author: Author
+};
+
+const newPost: Post = {
+    title: 'My first post',
+    body: 'something interesting',
+    tags: ['gaming', 'tech'],
+    createdAt: new Date(),
+    author: authorOne
+};
+
+// interfaces as function argument types
+function createPost(post: Post): void {
+    console.log(`Created post ${post.title} by ${post.author.name}`);
+};
+createPost(newPost);
+
+// interfaces with arrays
+let posts: Post[] = [];
+posts.push(newPost);
+console.log(posts);
