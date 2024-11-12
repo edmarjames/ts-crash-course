@@ -87,3 +87,21 @@ const resultOne = addTogether('edmar');
 const resultTwo = addTogether(5);
 console.log(resultOne);
 console.log(resultTwo);
+// tuples
+let newPerson = ['John', 21, false];
+let hsla;
+hsla = [200, '100%', '50%', 1];
+let xy;
+xy = [94.7, 20.1];
+// tuples in function
+function useCoords() {
+    const lat = 100;
+    const long = 50;
+    return [lat, long];
+}
+;
+const [lat, long] = useCoords();
+// named tuples
+let tupleUser;
+tupleUser = ['gem', 90];
+console.log(tupleUser[0]);

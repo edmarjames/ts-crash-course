@@ -84,3 +84,50 @@ function formatGreeting(name: string, greeting: string) {
 
 const result = formatGreeting('Edmar', 'Hello');
 console.log(result);
+
+// any type
+let newAge: any;
+newAge = 10;
+newAge = '10';
+
+let title;
+title = true;
+title = '10';
+
+// any type in arrays
+let anything: any[] = ['hi', 1, true, undefined];
+anything.push({id : 1});
+console.log(anything);
+
+// any type in functions
+function addTogether(value: any): any {
+    return value + value;
+};
+
+const resultOne = addTogether('edmar');
+const resultTwo = addTogether(5);
+console.log(resultOne);
+console.log(resultTwo);
+
+// tuples
+let newPerson: [string, number, boolean] = ['John', 21, false];
+
+let hsla: [number, string, string, number];
+hsla = [200, '100%', '50%', 1];
+
+let xy: [number, number];
+xy = [94.7, 20.1];
+
+// tuples in function
+function useCoords(): [number, number] {
+    const lat = 100;
+    const long = 50;
+
+    return [lat, long];
+};
+const [lat, long] = useCoords();
+
+// named tuples
+let tupleUser: [name: string, age: number];
+tupleUser = ['gem', 90];
+console.log(tupleUser[0]);
