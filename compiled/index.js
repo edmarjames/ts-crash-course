@@ -67,3 +67,23 @@ function formatGreeting(name, greeting) {
 ;
 const result = formatGreeting('Edmar', 'Hello');
 console.log(result);
+// any type
+let newAge;
+newAge = 10;
+newAge = '10';
+let title;
+title = true;
+title = '10';
+// any type in arrays
+let anything = ['hi', 1, true, undefined];
+anything.push({ id: 1 });
+console.log(anything);
+// any type in functions
+function addTogether(value) {
+    return value + value;
+}
+;
+const resultOne = addTogether('edmar');
+const resultTwo = addTogether(5);
+console.log(resultOne);
+console.log(resultTwo);
