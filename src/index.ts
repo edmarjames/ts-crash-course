@@ -166,3 +166,38 @@ createPost(newPost);
 let posts: Post[] = [];
 posts.push(newPost);
 console.log(posts);
+
+// type aliases
+type Rgb = [number, number, number];
+
+function getRandomColor(): Rgb {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+
+    return [r, g, b];
+};
+
+const firstColor = getRandomColor();
+const secondColor = getRandomColor();
+console.log(firstColor, secondColor);
+
+// type aliases with object literal
+type User = {
+    name: string,
+    score: number
+};
+
+const userOne: User = {
+    name: 'Mario',
+    score: 75,
+};
+console.log(userOne);
+
+// type aliases with function
+function formatUser(user: User): void {
+    console.log(`${user.name} has a score of ${user.score}`);
+};
+
+formatUser(userOne);
+formatUser({name: "Andres", score: 99});

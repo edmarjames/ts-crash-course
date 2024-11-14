@@ -125,3 +125,25 @@ createPost(newPost);
 let posts = [];
 posts.push(newPost);
 console.log(posts);
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+;
+const firstColor = getRandomColor();
+const secondColor = getRandomColor();
+console.log(firstColor, secondColor);
+const userOne = {
+    name: 'Mario',
+    score: 75,
+};
+console.log(userOne);
+// type aliases with function
+function formatUser(user) {
+    console.log(`${user.name} has a score of ${user.score}`);
+}
+;
+formatUser(userOne);
+formatUser({ name: "Andres", score: 99 });
