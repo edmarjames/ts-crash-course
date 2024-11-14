@@ -165,3 +165,46 @@ function swapIdType(id) {
     return id;
 }
 ;
+// type guards
+function swapIdTypeCopy(id) {
+    if (typeof id === 'string') {
+        // can use string methods
+        return parseInt(id);
+    }
+    else {
+        return id.toString();
+        // can use number methods and properties
+    }
+}
+;
+const idOne = swapIdTypeCopy('1');
+const idTwo = swapIdTypeCopy(1);
+console.log(`${typeof (idOne)} -> ${idOne}`);
+console.log(`${typeof (idTwo)} -> ${idTwo}`);
+;
+;
+function logDetails(value) {
+    if ((value === null || value === void 0 ? void 0 : value.type) === 'stakeholder') {
+        console.log(value.email, value.username);
+    }
+    ;
+    if ((value === null || value === void 0 ? void 0 : value.type) === 'person') {
+        console.log(value.firstname, value.age);
+    }
+    ;
+}
+;
+const stakeholderOne = {
+    type: 'stakeholder',
+    username: 'Jane',
+    email: 'jane@gmail.com',
+    id: '2bcdd12'
+};
+const personOne = {
+    type: 'person',
+    firstname: 'John',
+    age: 23,
+    id: 1
+};
+logDetails(stakeholderOne);
+logDetails(personOne);

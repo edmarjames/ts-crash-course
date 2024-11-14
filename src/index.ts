@@ -223,3 +223,59 @@ function swapIdType(id: Id): Id {
     // parseInt(id) ---> not allowed
     return id;
 };
+
+// type guards
+function swapIdTypeCopy(id: Id) {
+    if (typeof id === 'string') {
+        // can use string methods
+        return parseInt(id);
+    } else {
+        return id.toString();
+        // can use number methods and properties
+    }
+};
+
+const idOne = swapIdTypeCopy('1');
+const idTwo = swapIdTypeCopy(1);
+console.log(`${typeof(idOne)} -> ${idOne}`);
+console.log(`${typeof(idTwo)} -> ${idTwo}`);
+
+// tagged interfaces
+interface Stakeholder {
+    type: 'stakeholder',
+    username: string,
+    email: string,
+    id: Id
+};
+
+interface Person {
+    type: 'person',
+    firstname: string,
+    age: number,
+    id: Id
+};
+
+function logDetails(value: Stakeholder | Person): void {
+    if (value?.type === 'stakeholder') {
+        console.log(value.email, value.username);
+    };
+    if (value?.type === 'person') {
+        console.log(value.firstname, value.age);
+    };
+};
+
+const stakeholderOne: Stakeholder = {
+    type: 'stakeholder',
+    username: 'Jane',
+    email: 'jane@gmail.com',
+    id: '2bcdd12'
+};
+
+const personOne: Person = {
+    type: 'person',
+    firstname: 'John',
+    age: 23,
+    id: 1
+};
+logDetails(stakeholderOne);
+logDetails(personOne);
